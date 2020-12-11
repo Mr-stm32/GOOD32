@@ -129,8 +129,10 @@ static  void  AppTaskStart (void *p_arg)
 //    u16 led0pwmval = 0;
 //    u8  dir = 1;
     
-uint8_t array[10] = {0,1,2,3,4,5,6,7,8,9};
-    
+//uint8_t array[10] = {0,1,2,3,4,5,6,7,8,9};
+
+static S_GregorianCalendarTimeDef timer = {0};
+
     (void)p_arg;
 
     fHAL_Iint();
@@ -153,8 +155,8 @@ uint8_t array[10] = {0,1,2,3,4,5,6,7,8,9};
 
     fAppObjCreate();                                             // 创建应用程序Events
     
-    USART_SendData(USART2, 0x66);
-    
+//    USART_SendData(USART2, 0x66);
+    fRTC_Set(2020,12,11,8,0,0);
     for(;;)                                                     // 任务主体，总是写成一个无限循环。
     {
 //        if(dir)
@@ -167,9 +169,11 @@ uint8_t array[10] = {0,1,2,3,4,5,6,7,8,9};
 //            dir=1;
 //        TIM_SetCompare1(TIM3,led0pwmval);
 //        TIM_SetCompare2(TIM3,led0pwmval);
-        fUSART_SendArrayData(MY_UART1,array,10);
-        fUSART_SendArrayData(MY_UART2,array,10);
-        OSTimeDlyHMSM(0, 0, 1, 100,OS_OPT_TIME_HMSM_STRICT, &err);  
+//        fUSART_SendArrayData(MY_UART1,array,10);
+//        fUSART_SendArrayData(MY_UART2,array,10);
+        fRTC_Get(&timer);
+//        timer.sec++;
+        OSTimeDlyHMSM(0, 0, 1, 0,OS_OPT_TIME_HMSM_STRICT, &err);  
 //        LED1_OFF;
 //        LED2_ON;
 //        OSTimeDlyHMSM(0, 0, 0, 150,OS_OPT_TIME_HMSM_STRICT, &err);

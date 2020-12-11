@@ -89,11 +89,11 @@ typedef enum {
 	MY_UART2, 
 	MY_UART3,
 	MY_UART4,
-	MY_UART5}e_UartName; // 串口号 
+	MY_UART5}E_UartName; // 串口号 
 
-typedef uint8_t (*fUartGetSendDataCallFunc)(e_UartName, uint8_t); // 返回0成功；argv[0]:串口号；argv[1]:发送值
-typedef void (*fUartPostRcvDataCallFunc)(e_UartName, uint8_t);    // argv[0]:串口号；argv[1]:接收值
-typedef void (*fUartSendEndHandlerCallFunc)(e_UartName);          // argv[0]:串口号；
+typedef uint8_t (*fUartGetSendDataCallFunc)(E_UartName, uint8_t); // 返回0成功；argv[0]:串口号；argv[1]:发送值
+typedef void (*fUartPostRcvDataCallFunc)(E_UartName, uint8_t);    // argv[0]:串口号；argv[1]:接收值
+typedef void (*fUartSendEndHandlerCallFunc)(E_UartName);          // argv[0]:串口号；
     
 /*******************************************接口区*******************************************************/
 /*********************************************************************************************************
@@ -182,7 +182,7 @@ extern void fUART5_Init(void);
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-extern uint8_t fUSART_SendArrayData(e_UartName nUart,const uint8_t *array,const uint32_t length);   
+extern uint8_t fUSART_SendArrayData(E_UartName nUart,const uint8_t *array,const uint32_t length);   
 
 #endif //__HAL_UART_H_
 /****************************************END OF FILE****************************************************/

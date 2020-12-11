@@ -75,6 +75,8 @@
 #include "hal_io.h" 
 #include "hal_uart.h"
 #include "hal_spi.h"
+#include "hal_rtc.h"
+
 #include "hal_pwm.h"
 
 #endif

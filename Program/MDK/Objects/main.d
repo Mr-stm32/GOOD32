@@ -53,4 +53,5 @@
 .\objects\main.o: ..\HAL\hal_io.h
 .\objects\main.o: ..\HAL\hal_uart.h
 .\objects\main.o: ..\HAL\hal_spi.h
+.\objects\main.o: ..\HAL\hal_rtc.h
 .\objects\main.o: ..\HAL\hal_pwm.h

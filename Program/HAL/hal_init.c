@@ -79,6 +79,8 @@ void fHAL_Iint(void)
     fUSART1_Init();  
     fUSART2_Init(); 
     fSPI1_Init();
+    fRTC_Init();
+    
 //    fGPIO_Init(KEY1_PORT, KEY1_PIN, KEY1_MODE);
 //    fGPIO_Init(KEY2_PORT, KEY2_PIN, KEY2_MODE);
 //    fGPIO_Init(KEY3_PORT, KEY3_PIN, KEY3_MODE);

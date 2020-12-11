@@ -615,7 +615,7 @@ void UART5_IRQHandler(void)
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-uint8_t fUSART_SendArrayData(e_UartName nUart,const uint8_t *array,const uint32_t length)
+uint8_t fUSART_SendArrayData(E_UartName nUart,const uint8_t *array,const uint32_t length)
 {
     uint32_t i = 0;
     uint32_t overTime = 0;
