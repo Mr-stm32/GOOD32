@@ -37,8 +37,8 @@
 	#define USART1_RX_PIN							GPIO_Pin_10							
 	#define USART1_TX_PIN							GPIO_Pin_9						
 	#define	USART1_BAUD_RATE						115200
-	#define USART1_PREEMPTION_PRIORITY				0
-	#define USART1_SUB_PRIORITY						1
+	#define USART1_PREEMPT				0
+	#define USART1_SUB						1
     #define USART1_IT_TX_START                      USART_ITConfig(USART1, USART_IT_TXE, ENABLE)
 #endif // USART1_EN
 
@@ -47,8 +47,8 @@
 	#define USART2_RX_PIN							GPIO_Pin_3							
 	#define USART2_TX_PIN							GPIO_Pin_2					
 	#define	USART2_BAUD_RATE						115200
-	#define USART2_PREEMPTION_PRIORITY				0
-	#define USART2_SUB_PRIORITY						1
+	#define USART2_PREEMPT				            0
+	#define USART2_SUB						        1
     #define USART2_IT_TX_START                      USART_ITConfig(USART2, USART_IT_TXE, ENABLE)
 #endif // USART2_EN
 
@@ -57,8 +57,8 @@
 	#define USART3_RX_PIN							GPIO_Pin_11						
 	#define USART3_TX_PIN							GPIO_Pin_10					
 	#define	USART3_BAUD_RATE						115200
-	#define USART3_PREEMPTION_PRIORITY				0
-	#define USART3_SUB_PRIORITY						2
+	#define USART3_PREEMPT				            0
+	#define USART3_SUB						        2
     #define USART3_IT_TX_START                      USART_ITConfig(USART3, USART_IT_TXE, ENABLE)
 #endif // USART3_EN
 
@@ -67,8 +67,8 @@
 	#define UART4_RX_PIN							GPIO_Pin_11						
 	#define UART4_TX_PIN							GPIO_Pin_10					
 	#define	UART4_BAUD_RATE						    115200
-	#define UART4_PREEMPTION_PRIORITY				0
-	#define UART4_SUB_PRIORITY						3
+	#define UART4_PREEMPT				            0
+	#define UART4_SUB						        3
     #define UART4_IT_TX_START                       USART_ITConfig(UART4, USART_IT_TXE, ENABLE)
 #endif // UART4_EN
 
@@ -78,8 +78,8 @@
 	#define UART5_RX_PIN							GPIO_Pin_2					
 	#define UART5_TX_PIN							GPIO_Pin_12					
 	#define	UART5_BAUD_RATE						    115200
-	#define UART5_PREEMPTION_PRIORITY				0
-	#define UART5_SUB_PRIORITY						4
+	#define UART5_PREEMPT				            0
+	#define UART5_SUB						        4
     #define UART5_IT_TX_START                       USART_ITConfig(UART5, USART_IT_TXE, ENABLE)
 #endif // UART5_EN
 

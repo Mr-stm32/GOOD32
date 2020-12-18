@@ -54,4 +54,9 @@
 .\objects\main.o: ..\HAL\hal_uart.h
 .\objects\main.o: ..\HAL\hal_spi.h
 .\objects\main.o: ..\HAL\hal_rtc.h
+.\objects\main.o: ..\HAL\hal_iwdg.h
+.\objects\main.o: ..\HAL\hal_wwdg.h
 .\objects\main.o: ..\HAL\hal_pwm.h
+.\objects\main.o: ..\HAL\hal_tim.h
+.\objects\main.o: ..\HDL\hdl_enc28j60.h
+.\objects\main.o: ..\APP\includes.h

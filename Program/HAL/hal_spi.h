@@ -30,6 +30,10 @@
 #endif // DEF_STM32F10X_SPI_EN
 
 #if (SPI1_EN > 0)
+#define SPI1_CPOL                   SPI_CPOL_High            // 设置时钟极性，同步时钟的空闲状态为高电平           
+#define SPI1_CPHA                   SPI_CPHA_2Edge           // 串行同步时钟的第几个跳变沿数据被采样，我们选择第二个跳变沿
+#define SPI1_BRP                    SPI_BaudRatePrescaler_4  // SPI速度，36M / 4 = 8M                    
+
 #define SPI1_CS_PORT         	    GPIOA
 #define SPI1_CS_PIN         	    GPIO_Pin_4
 #define	SPI1_CS_DISSELECT           GPIO_SetBits(SPI1_CS_PORT, SPI1_CS_PIN)
@@ -37,10 +41,14 @@
 #endif // SPI1_EN
 
 #if (SPI2_EN > 0)
+#define SPI2_CPOL                   SPI_CPOL_Low            // 设置时钟极性，同步时钟的空闲状态为高电平           
+#define SPI2_CPHA                   SPI_CPHA_1Edge          // 串行同步时钟的第几个跳变沿数据被采样，我们选择第二个跳变沿
+#define SPI2_BRP                    SPI_BaudRatePrescaler_256 // SPI速度，36M / 4 = 8M     
+
 #define SPI2_CS_PORT         	    GPIOB
 #define SPI2_CS_PIN         	    GPIO_Pin_12
-#define	SPI2_CS_DISSELECT           GPIO_SetBits(SPI1_CS_PORT, SPI1_CS_PIN)
-#define	SPI2_CS_SELECT              GPIO_ResetBits(SPI1_CS_PORT, SPI1_CS_PIN)    
+#define	SPI2_CS_DISSELECT           GPIO_SetBits(SPI2_CS_PORT, SPI2_CS_PIN)
+#define	SPI2_CS_SELECT              GPIO_ResetBits(SPI2_CS_PORT, SPI2_CS_PIN)    
 #endif // SPI1_EN
 
 /*******************************************自定义类型区************************************************/
@@ -59,7 +67,7 @@
 ***********************************************************************************************************/
 extern void fSPI1_Init(void);
 /*********************************************************************************************************
-** 函数名称 ：SPI1_FlashSendByte
+** 函数名称 ：fSPI1_FlashSendByte
 ** 函数功能 ：发送数据
 ** 入口参数 ：byte: 发送的数据
 ** 出口参数 ：None
@@ -69,9 +77,9 @@ extern void fSPI1_Init(void);
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-extern uint8_t SPI1_FlashSendByte(uint8_t byte);
+extern uint8_t fSPI1_FlashSendByte(uint8_t byte);
 /*********************************************************************************************************
-** 函数名称 ：SPI1_FlashReadByte
+** 函数名称 ：fSPI1_FlashReadByte
 ** 函数功能 ：读取数据
 ** 入口参数 ：None
 ** 出口参数 ：读取到的数据
@@ -81,7 +89,7 @@ extern uint8_t SPI1_FlashSendByte(uint8_t byte);
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-extern uint8_t SPI1_FlashReadByte(void);	
+extern uint8_t fSPI1_FlashReadByte(void);	
 /*********************************************************************************************************
 ** 函数名称 ：fSPI2_Init
 ** 函数功能 ：SPI2初始化
@@ -95,7 +103,7 @@ extern uint8_t SPI1_FlashReadByte(void);
 ***********************************************************************************************************/
 extern void fSPI2_Init(void);
 /*********************************************************************************************************
-** 函数名称 ：SPI2_FlashSendByte
+** 函数名称 ：fSPI2_FlashSendByte
 ** 函数功能 ：发送数据
 ** 入口参数 ：byte: 发送的数据
 ** 出口参数 ：None
@@ -105,9 +113,9 @@ extern void fSPI2_Init(void);
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-extern uint8_t SPI2_FlashSendByte(uint8_t byte);
+extern uint8_t fSPI2_FlashSendByte(uint8_t byte);
 /*********************************************************************************************************
-** 函数名称 ：SPI2_FlashReadByte
+** 函数名称 ：fSPI2_FlashReadByte
 ** 函数功能 ：读取数据
 ** 入口参数 ：None
 ** 出口参数 ：读取到的数据
@@ -117,6 +125,6 @@ extern uint8_t SPI2_FlashSendByte(uint8_t byte);
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-extern uint8_t SPI2_FlashReadByte(void);
+extern uint8_t fSPI2_FlashReadByte(void);
 #endif
 /****************************************END OF FILE****************************************************/

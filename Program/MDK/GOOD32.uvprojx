@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>TM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CMSIS;..\FWlib\inc;..\uCos-III\uC_CFG;..\uCos-III\uC-CPU;..\uCos-III\uC-CPU\ARM-Cortex-M3\RealView;..\uCos-III\uC-LIB;..\uCos-III\uC-LIB\Ports\ARM-Cortex-M3\RealView;..\uCos-III\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView;..\uCos-III\uCOS-III\Source;..\APP;..\HAL</IncludePath>
+              <IncludePath>..\CMSIS;..\FWlib\inc;..\uCos-III\uC_CFG;..\uCos-III\uC-CPU;..\uCos-III\uC-CPU\ARM-Cortex-M3\RealView;..\uCos-III\uC-LIB;..\uCos-III\uC-LIB\Ports\ARM-Cortex-M3\RealView;..\uCos-III\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView;..\uCos-III\uCOS-III\Source;..\APP;..\HAL;..\HDL</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -423,6 +423,18 @@
         </Group>
         <Group>
           <GroupName>HDL</GroupName>
+          <Files>
+            <File>
+              <FileName>hdl_enc28j60.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HDL\hdl_enc28j60.c</FilePath>
+            </File>
+            <File>
+              <FileName>hdl_enc28j60.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HDL\hdl_enc28j60.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>HAL</GroupName>
@@ -478,26 +490,6 @@
               <FilePath>..\HAL\hal_rtc.h</FilePath>
             </File>
             <File>
-              <FileName>hal_tim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HAL\hal_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>hal_tim.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\HAL\hal_tim.h</FilePath>
-            </File>
-            <File>
-              <FileName>hal_pwm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HAL\hal_pwm.c</FilePath>
-            </File>
-            <File>
-              <FileName>hal_pwm.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\HAL\hal_pwm.h</FilePath>
-            </File>
-            <File>
               <FileName>hal_iwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HAL\hal_iwdg.c</FilePath>
@@ -516,6 +508,26 @@
               <FileName>hal_wwdg.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\HAL\hal_wwdg.h</FilePath>
+            </File>
+            <File>
+              <FileName>hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HAL\hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_tim.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HAL\hal_tim.h</FilePath>
+            </File>
+            <File>
+              <FileName>hal_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HAL\hal_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_pwm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HAL\hal_pwm.h</FilePath>
             </File>
             <File>
               <FileName>hal_adc.c</FileName>

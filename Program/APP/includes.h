@@ -76,8 +76,12 @@
 #include "hal_uart.h"
 #include "hal_spi.h"
 #include "hal_rtc.h"
-
+#include "hal_iwdg.h"
+#include "hal_wwdg.h"
 #include "hal_pwm.h"
+#include "hal_tim.h"
+
+#include "hdl_enc28j60.h"
 
 #endif
 /****************************************END OF FILE****************************************************/

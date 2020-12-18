@@ -88,8 +88,8 @@ void fUSART1_Init(void)
 
 //--配置中断向量
     NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USART1_PREEMPTION_PRIORITY;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = USART1_SUB_PRIORITY;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USART1_PREEMPT;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = USART1_SUB;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
@@ -188,8 +188,8 @@ void fUSART2_Init(void)
 
 //--配置中断向量
     NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USART2_PREEMPTION_PRIORITY;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = USART2_SUB_PRIORITY;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USART2_PREEMPT;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = USART2_SUB;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
@@ -298,8 +298,8 @@ void fUSART3_Init(void)
 
 //--配置中断向量
     NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USART3_PREEMPTION_PRIORITY;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = USART3_SUB_PRIORITY;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USART3_PREEMPT;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = USART3_SUB;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
@@ -408,8 +408,8 @@ void fUART4_Init(void)
 
 //--配置中断向量
     NVIC_InitStructure.NVIC_IRQChannel = UART4_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = UART4_PREEMPTION_PRIORITY;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = UART4_SUB_PRIORITY;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = UART4_PREEMPT;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = UART4_SUB;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 
@@ -518,8 +518,8 @@ void fUART5_Init(void)
 
 //--配置中断向量
     NVIC_InitStructure.NVIC_IRQChannel = UART5_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = UART5_PREEMPTION_PRIORITY;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = UART5_SUB_PRIORITY;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = UART5_PREEMPT;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = UART5_SUB;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 

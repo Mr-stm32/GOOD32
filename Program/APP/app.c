@@ -136,6 +136,8 @@ static S_GregorianCalendarTimeDef timer = {0};
     (void)p_arg;
 
     fHAL_Iint();
+    
+    while(fENC28J60_Init());
 //    fHDL_Init();
     CPU_Init();
 

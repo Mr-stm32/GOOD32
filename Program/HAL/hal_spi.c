@@ -80,10 +80,10 @@ void fSPI1_Init(void)
     SPI_InitStructure.SPI_Direction         = SPI_Direction_2Lines_FullDuplex;  // 全双工模式
     SPI_InitStructure.SPI_Mode              = SPI_Mode_Master;                  // 主机
     SPI_InitStructure.SPI_DataSize          = SPI_DataSize_8b;                  // 数据8bit
-    SPI_InitStructure.SPI_CPOL              = SPI_CPOL_High;                    // 设置时钟极性，同步时钟的空闲状态为高电平
-    SPI_InitStructure.SPI_CPHA              = SPI_CPHA_2Edge;                   // 串行同步时钟的第几个跳变沿数据被采样，我们选择第二个跳变沿
+    SPI_InitStructure.SPI_CPOL              = SPI1_CPOL;                        // 设置时钟极性，同步时钟的空闲状态为高电平
+    SPI_InitStructure.SPI_CPHA              = SPI1_CPHA;                        // 串行同步时钟的第几个跳变沿数据被采样，我们选择第二个跳变沿
     SPI_InitStructure.SPI_NSS               = SPI_NSS_Soft;                     // NSS 信号由硬件（NSS 管脚）还是软件控制，我们选择软控
-    SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;          // SPI速度，36M / 4 = 8M
+    SPI_InitStructure.SPI_BaudRatePrescaler = SPI1_BRP;                         // SPI速度，36M / 4 = 8M     
     SPI_InitStructure.SPI_FirstBit          = SPI_FirstBit_MSB;                 // 设置数据传输顺序是 MSB 位在前还是 LSB 位在前
     SPI_InitStructure.SPI_CRCPolynomial     = 7;                                // 设置 CRC 校验多项式
     SPI_Init(SPI1, &SPI_InitStructure);
@@ -95,7 +95,7 @@ void fSPI1_Init(void)
 
 
 /*********************************************************************************************************
-** 函数名称 ：SPI1_FlashSendByte
+** 函数名称 ：fSPI1_FlashSendByte
 ** 函数功能 ：发送数据
 ** 入口参数 ：byte: 发送的数据
 ** 出口参数 ：None
@@ -105,7 +105,7 @@ void fSPI1_Init(void)
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-uint8_t SPI1_FlashSendByte(uint8_t byte)	
+uint8_t fSPI1_FlashSendByte(uint8_t byte)	
 {
 #if (SPI1_EN > 0)
     
@@ -122,7 +122,7 @@ uint8_t SPI1_FlashSendByte(uint8_t byte)
 }
 
 /*********************************************************************************************************
-** 函数名称 ：SPI1_FlashReadByte
+** 函数名称 ：fSPI1_FlashReadByte
 ** 函数功能 ：读取数据
 ** 入口参数 ：None
 ** 出口参数 ：读取到的数据
@@ -132,10 +132,10 @@ uint8_t SPI1_FlashSendByte(uint8_t byte)
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-uint8_t SPI1_FlashReadByte(void)	   
+uint8_t fSPI1_FlashReadByte(void)	   
 {
 #if (SPI1_EN > 0)
-  return (SPI1_FlashSendByte(0xA5));
+  return (fSPI1_FlashSendByte(0xA5));
 #else
     return 0;
 #endif //SPI1_EN  
@@ -177,7 +177,6 @@ void fSPI2_Init(void)
     GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
     GPIO_Init(SPI2_CS_PORT, &GPIO_InitStructure);
 
-
 //--失能片选脚
     SPI2_CS_DISSELECT;
 
@@ -185,10 +184,10 @@ void fSPI2_Init(void)
     SPI_InitStructure.SPI_Direction         = SPI_Direction_2Lines_FullDuplex;  // 全双工模式
     SPI_InitStructure.SPI_Mode              = SPI_Mode_Master;                  // 主机
     SPI_InitStructure.SPI_DataSize          = SPI_DataSize_8b;                  // 数据8bit
-    SPI_InitStructure.SPI_CPOL              = SPI_CPOL_High;                    // 设置时钟极性，同步时钟的空闲状态为高电平
-    SPI_InitStructure.SPI_CPHA              = SPI_CPHA_2Edge;                   // 串行同步时钟的第几个跳变沿数据被采样，我们选择第二个跳变沿
+    SPI_InitStructure.SPI_CPOL              = SPI2_CPOL;                        // 设置时钟极性，同步时钟的空闲状态为高电平
+    SPI_InitStructure.SPI_CPHA              = SPI2_CPHA;                        // 串行同步时钟的第几个跳变沿数据被采样，我们选择第二个跳变沿
     SPI_InitStructure.SPI_NSS               = SPI_NSS_Soft;                     // NSS 信号由硬件（NSS 管脚）还是软件控制，我们选择软控
-    SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;          // SPI速度，36M / 4 = 8M
+    SPI_InitStructure.SPI_BaudRatePrescaler = SPI2_BRP;                         // SPI速度，36M / 4 = 8M
     SPI_InitStructure.SPI_FirstBit          = SPI_FirstBit_MSB;                 // 设置数据传输顺序是 MSB 位在前还是 LSB 位在前
     SPI_InitStructure.SPI_CRCPolynomial     = 7;                                // 设置 CRC 校验多项式
     SPI_Init(SPI2, &SPI_InitStructure);
@@ -199,7 +198,7 @@ void fSPI2_Init(void)
 }
 
 /*********************************************************************************************************
-** 函数名称 ：SPI2_FlashSendByte
+** 函数名称 ：fSPI2_FlashSendByte
 ** 函数功能 ：发送数据
 ** 入口参数 ：byte: 发送的数据
 ** 出口参数 ：None
@@ -209,7 +208,7 @@ void fSPI2_Init(void)
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-uint8_t SPI2_FlashSendByte(uint8_t byte)	
+uint8_t fSPI2_FlashSendByte(uint8_t byte)	
 {
 #if (SPI2_EN > 0)
     
@@ -226,7 +225,7 @@ uint8_t SPI2_FlashSendByte(uint8_t byte)
 }
 
 /*********************************************************************************************************
-** 函数名称 ：SPI2_FlashReadByte
+** 函数名称 ：fSPI2_FlashReadByte
 ** 函数功能 ：读取数据
 ** 入口参数 ：None
 ** 出口参数 ：读取到的数据
@@ -236,10 +235,10 @@ uint8_t SPI2_FlashSendByte(uint8_t byte)
 ** 修改日期 ：None
 ** 修改内容 ：None
 ***********************************************************************************************************/
-uint8_t SPI2_FlashReadByte(void)	   
+uint8_t fSPI2_FlashReadByte(void)	   
 {
 #if (SPI2_EN > 0)
-  return (SPI2_FlashSendByte(0xA5));
+  return (fSPI2_FlashSendByte(0xA5));
 #else
     return 0;
 #endif //SPI2_EN  
